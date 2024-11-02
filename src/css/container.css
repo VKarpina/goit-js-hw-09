@@ -1,4 +1,12 @@
 /* Styles for Mobile devices */
+* {
+  box-sizing: border-box;
+}
+
+main {
+  background: linear-gradient(to bottom right, #344a4e, #3b92a3);
+}
+
 .container {
   min-width: 320px;
   max-width: 375px;
@@ -16,4 +24,82 @@
   .container {
     max-width: 1200px;
   }
+}
+
+.main-page {
+  padding: 100%;
+}
+
+.nav-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav-list {
+  width: 300px;
+  padding: 2em;
+  background-color: #344a4e;
+  border-radius: 10px;
+  position: relative;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.nav-list::after,
+.nav-list::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  background-image: conic-gradient(from var(--angle), transparent 70%, #adccd2);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 4px;
+  animation: 3s spin linear infinite;
+  box-shadow: 0 4px 8px rgba(0.1, 0.1, 0.1, 0.5);
+}
+
+.nav-list::before {
+  filter: blur (1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.nav-list {
+  text-align: center;
+}
+
+.nav-item {
+  padding: 30px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1;
+  color: #fbfbfb;
+  letter-spacing: 0.02em;
+  transition: 200ms ease-in;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #57a5b5;
 }

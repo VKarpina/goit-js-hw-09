@@ -1,0 +1,38 @@
+.main-title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3rem;
+  background: linear-gradient(to right, #a1c4d4, #adccd2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gallery {
+  max-width: 1128px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 24px;
+  padding: 24px;
+}
+
+.gallery-item {
+  width: calc((100% - 2 * 24px) / 3);
+}
+
+.gallery-image {
+  display: block;
+  height: auto;
+  width: 100%;
+  cursor: zoom-in;
+  transition: transform 0.4s;
+}
+
+.gallery-image:hover {
+  transform: scale(1.04);
+}
+
+.sl-wrapper {
+  background: rgba(46, 47, 66, 0.8);
+}
